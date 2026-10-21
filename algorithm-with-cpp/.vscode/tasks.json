@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "CP: run current problem",
+      "type": "shell",
+      "command": "./run.sh ${relativeFile}",
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "CP: build debug",
+      "type": "shell",
+      "command": "mkdir -p build && c++ -std=c++17 -g -O0 -Wall -Wextra -Iinclude -DLOCAL -fsanitize=address,undefined ${relativeFile} -o build/${fileBasenameNoExtension}",
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug current file (stdin = input/<bai>.txt)",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
+      "stdio": ["${workspaceFolder}/input/${fileBasenameNoExtension}.txt", null, null],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "CP: build debug"
+    }
+  ]
+}
